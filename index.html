@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Include all CSS here for full functionality */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+      background: #f2f2f2;
+      color: #222;
+    }
+
+    header {
+      background: #111;
+      color: white;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5em;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    #darkModeToggle,
+    .hamburger {
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      color: white;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .home {
+      background: url('https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .home h2 {
+      font-size: 3em;
+    }
+
+    .home span {
+      color: #00ccff;
+    }
+
+    .project-list,
+    .skills-list,
+    .achievement-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .project,
+    .skill,
+    .achievement {
+      padding: 15px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact input,
+    .contact textarea {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .contact button {
+      padding: 10px;
+      background: #00ccff;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    body.dark {
+      background: #111;
+      color: #eee;
+    }
+
+    body.dark header,
+    body.dark footer {
+      background: #222;
+    }
+
+    body.dark .nav-links li a,
+    body.dark .skill,
+    body.dark .project,
+    body.dark .achievement {
+      background: #333;
+      color: #eee;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        right: 20px;
+        top: 60px;
+        background: #222;
+        padding: 10px;
+        flex-direction: column;
+        border-radius: 6px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <h1 class="logo">MyPortfolio</h1>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="darkModeToggle">🌙</button>
+      <button id="hamburger" class="hamburger">☰</button>
+    </nav>
+  </header>
+
+  <section id="home" class="home">
+    <div class="intro">
+      <h2>Hello, I'm <span>Sanskruti</span></h2>
+      <p>A passionate Web Developer</p>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I am a Computer Science student who loves building creative and impactful websites. I enjoy both frontend and backend development and constantly strive to learn more.</p>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <div class="skill">HTML, CSS, JavaScript</div>
+      <div class="skill">React Basics</div>
+      <div class="skill">Python, Flask (Basic)</div>
+      <div class="skill">UI/UX Design</div>
+    </div>
+  </section>
+
+  <section id="achievements" class="achievements">
+    <h2>Achievements</h2>
+    <div class="achievement-list">
+      <div class="achievement">2nd Place - College Shark Tank Competition</div>
+      <div class="achievement">Lead Role in Annual Drama Fest</div>
+      <div class="achievement">Top 10 in University Coding Hackathon</div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project">
+        <h3>Child Vaccination Website</h3>
+        <p>Helps parents register their child and view vaccination schedule.</p>
+      </div>
+      <div class="project">
+        <h3>Stage Fear Helper</h3>
+        <p>Website that reduces stage fear with animations and motivational tips.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p id="formMessage"></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Sanskruti | All rights reserved</p>
+  </footer>
+
+  <script>
+    // Toggle Dark Mode
+    document.getElementById("darkModeToggle").addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+    });
+
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    // Contact Form Submit
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("formMessage").innerText = "Thanks! I will get back to you.";
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
